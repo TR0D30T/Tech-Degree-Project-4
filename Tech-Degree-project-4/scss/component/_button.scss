@@ -1,0 +1,75 @@
+//Buttons
+
+.btn {
+    margin-top: 15px;
+    width: 100%;
+    color: $btn-txt-color;
+    border: none;
+    padding: 10px 0;
+    text-transform: uppercase;
+    border-radius: 5px;
+   
+
+
+    @each $bttn,
+    $color in $btn-color-map {
+        #{$bttn} {
+            background-color: $color;
+        }
+    }
+
+    @include mq ($break-s) {
+        padding: 10px 30px;
+
+        & + .btn {
+            margin-left: 10px;
+        }
+    }
+}
+
+
+
+.default {
+    background-color: $default;
+    &:hover {
+        @include lighten($default);
+        transition: background-color .3s ease-in-out, 
+    color .2s ease-in-out;
+    }
+}
+
+.error {
+    background-color: $error;
+    &:hover {
+        @include lighten($error);
+        transition: background-color .3s ease-in-out, 
+    color .2s ease-in-out;
+    }
+}
+
+.info {
+    background-color: $info;
+    &:hover {
+        @include lighten($info);
+        transition: background-color .3s ease-in-out, 
+    color .2s ease-in-out;
+    }
+}
+
+.success {
+    background-color: $success;
+    &:hover {
+        @include lighten($success);
+        transition: background-color .3s ease-in-out, 
+    color .2s ease-in-out;
+    }
+}
+
+.warning {
+    background-color: $warning;
+    &:hover {
+        @include lighten($warning);
+        transition: background-color .3s ease-in-out, 
+    color .2s ease-in-out;
+    }
+}
